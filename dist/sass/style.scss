@@ -1,0 +1,150 @@
+ @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+ * {
+  box-sizing: border-box;
+ }
+
+body {
+  font-size: 16px;
+  font-family: 'Lato';
+  color: #444;
+  line-height: 20px;
+  background-color: #EEE;
+}
+
+.clear {
+  clear: both;
+}
+
+#app {
+  width: 1024px;
+  margin: auto;
+}
+
+.columns {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  padding: 15px;
+
+  .column {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .column-left {
+    width: 80%;
+  }
+
+  .column-right {
+    width: 20%;
+  }
+}
+
+.project-list {
+  float: left;
+  width: 30%;
+  margin: 0 1.666%;
+  background-color: #FFF;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+
+  .project {
+    padding: 10px;
+    cursor: move;
+    border: 1px solid transparent;
+    margin-top: -10px;
+    margin-bottom: -10px;
+
+    &:hover {
+      border: 1px solid #EEE;
+      box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    &.is-dragging {
+      opacity: 0.5;
+    }
+  }
+
+  .project-dropzone {
+    padding: 10px 0;
+    position: relative;
+
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background-color: #EEE;
+    }
+
+    &.highlighted {
+      &:after {
+        background-color: #000;
+      }
+    }
+  }
+}
+
+.project-list-header {
+  padding: 10px 10px 0;
+  display: table;
+  width: 100%;
+
+  .project-list-name {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .project-count {
+    display: table-cell;
+    vertical-align: middle;
+    width: 90px;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+  }
+}
+
+.add-project {
+  padding: 15px;
+
+  .add-project-input {
+    width: 50%;
+    padding: 10px;
+    color: #777;
+    border: none;
+    border-radius: 0px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .add-project-button {
+    padding: 9px;
+    background-color: #FFF;
+    border: none;
+    border-left: 1px solid #EEE;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+  }
+}
+
+.total-projects-box {
+  margin: 0 15px;
+  width: 90px;
+  float: right;
+  text-align: center;
+
+  .total-projects {
+    padding: 15px 10px;
+    background-color: #FFF;
+  }
+}
